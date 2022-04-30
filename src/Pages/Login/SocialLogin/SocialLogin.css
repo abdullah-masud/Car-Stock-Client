@@ -1,0 +1,23 @@
+.continue-with-google {
+    border-radius: 15px;
+    border: none;
+    font-weight: 500;
+}
+
+.continue-with-google:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 576px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+
+}
+
+@media only screen and (min-width:577px) and (max-width: 992px) {}

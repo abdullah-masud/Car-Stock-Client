@@ -16,7 +16,7 @@ const Header = () => {
                         <Nav.Link as={CustomLink} to="/blogs" active>Blogs</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Button className='navbar-login-button' variant="outline-light">Login</Button>
+                        <Button as={Link} to='/login' className='navbar-login-button' variant="outline-light">Login</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
