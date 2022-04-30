@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
-
     const emailRef = useRef('')
     const passwordRef = useRef('')
-
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -17,7 +15,7 @@ const Login = () => {
     }
 
     return (
-        <Container className='mt-5'>
+        <Container className='mt-5 login-container'>
             <h2 className='text-center'>login</h2>
             <Form onSubmit={handleLogin} className='w-50 mx-auto '>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
