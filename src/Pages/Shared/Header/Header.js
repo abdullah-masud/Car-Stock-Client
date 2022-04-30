@@ -1,26 +1,23 @@
 import React from 'react';
-import { Container, Form, FormControl, Nav, Navbar, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import CustomLink from '../CustomLink/CustomLink';
+import './Header.css'
 
 const Header = () => {
     return (
-        <Navbar bg="dark" variant='dark' expand="lg">
-            <Container fluid className='mx-5 py-2'>
-                <Navbar.Brand href="#">Warehouse Management</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
-                    <Nav
-                        className="mx-auto my-2 my-lg-0"
-                        style={{ maxHeight: '100px' }}
-                        navbarScroll
-                    >
-                        <Nav.Link href="#action1" active>Home</Nav.Link>
-                        <Nav.Link href="#action1" active>Inventory</Nav.Link>
-                        <Nav.Link href="#action1" active>About</Nav.Link>
-
+        <Navbar collapseOnSelect expand="lg" bg="light" >
+            <Container>
+                <Navbar.Brand as={Link} to="/" className='title'>Car Stock</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mx-auto">
+                        <Nav.Link as={CustomLink} to="/home" active>Home</Nav.Link>
+                        <Nav.Link as={CustomLink} to="/blogs" active>Blogs</Nav.Link>
                     </Nav>
-                    <Form className="d-flex">
-                        <Button variant="outline-light">Login</Button>
-                    </Form>
+                    <Nav>
+                        <Button className='navbar-login-button' variant="outline-light">Login</Button>
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

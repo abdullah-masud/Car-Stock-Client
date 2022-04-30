@@ -1,0 +1,17 @@
+.title {
+    color: #144e5f !important;
+    font-weight: 500;
+}
+
+.navbar-login-button {
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    background-color: #144e5f;
+    font-weight: 400;
+}
+
+.navbar-login-button:hover {
+    background-color: #06566e;
+    color: white;
+}

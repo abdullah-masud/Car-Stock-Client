@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "1 day Tour",
+        "supplierName": "Teslaaaaa",
+        "price": "$200",
+        "quantity": "20",
+        "description": "Over the course of this 24-hour period, we'll take you to all of the city's top sights and ensure that you have a great time.",
+        "img": "https://i.ibb.co/qyRGbp6/1.png"
+    },
+    {
+        "id": 2,
+        "name": "3 days Tour",
+        "supplierName": "Teslaaaaar",
+        "price": "$500",
+        "quantity": "50",
+        "description": "We will take care of your three-day tour, including food and refreshments, as well as showing you the country's most beautiful sights.",
+        "img": "https://i.ibb.co/0jVWKjk/service1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "7 days Tour",
+        "supplierName": "Teslaaaaar",
+        "price": "$1150",
+        "quantity": "10",
+        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
+        "img": "https://i.ibb.co/HGPLfn5/3.png"
+    },
+    {
+        "id": 4,
+        "name": "7 days Tour",
+        "supplierName": "Teslaaaaar",
+        "price": "$1150",
+        "quantity": "110",
+        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
+        "img": "https://i.ibb.co/HGPLfn5/3.png"
+    },
+    {
+        "id": 5,
+        "name": "7 days Tour",
+        "supplierName": "Teslaaaaar",
+        "price": "$1150",
+        "quantity": "10",
+        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
+        "img": "https://i.ibb.co/HGPLfn5/3.png"
+    },
+    {
+        "id": 6,
+        "name": "7 days Tour",
+        "supplierName": "Teslaaaaar",
+        "price": "$1150",
+        "quantity": "10",
+        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
+        "img": "https://i.ibb.co/HGPLfn5/3.png"
+    }
+]

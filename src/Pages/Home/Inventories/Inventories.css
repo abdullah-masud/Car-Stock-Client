@@ -1,0 +1,26 @@
+.inventories-collection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 576px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+
+    .inventories-collection {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width: 992px) {
+    .inventories-collection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
