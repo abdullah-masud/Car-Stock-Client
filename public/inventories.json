@@ -1,56 +1,56 @@
 [
     {
         "id": 1,
-        "name": "1 day Tour",
-        "supplierName": "Teslaaaaa",
-        "price": "$200",
+        "name": "Ferrari F40",
+        "supplierName": "Ferrari",
+        "price": "$335,000",
         "quantity": "20",
-        "description": "Over the course of this 24-hour period, we'll take you to all of the city's top sights and ensure that you have a great time.",
-        "img": "https://i.ibb.co/qyRGbp6/1.png"
+        "description": "Ferraris are what dreams are made of. Fast and highly exclusive, these Italian supercars push the boundaries of performance and cause a stir wherever they go",
+        "img": "https://i.ibb.co/vwT9cwj/ferrari.png"
     },
     {
         "id": 2,
-        "name": "3 days Tour",
-        "supplierName": "Teslaaaaar",
-        "price": "$500",
-        "quantity": "50",
-        "description": "We will take care of your three-day tour, including food and refreshments, as well as showing you the country's most beautiful sights.",
-        "img": "https://i.ibb.co/0jVWKjk/service1.jpg"
+        "name": "Ford Endeavour",
+        "supplierName": "Ford",
+        "price": "$74,250",
+        "quantity": "30",
+        "description": "Ford is a legendary car company. It's known as the first auto manufacturer to automate production with an assembly line, pay workers a so-called fair daily wage.",
+        "img": "https://i.ibb.co/4WHrBzC/ford.png"
     },
     {
         "id": 3,
-        "name": "7 days Tour",
-        "supplierName": "Teslaaaaar",
-        "price": "$1150",
-        "quantity": "10",
-        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
-        "img": "https://i.ibb.co/HGPLfn5/3.png"
+        "name": "Aventador",
+        "supplierName": "Lamborghini",
+        "price": "$500,000",
+        "quantity": "40",
+        "description": "Lamborghini is an Italian brand and manufacturer of luxury sports cars and SUVs. The entire car is made of carbon fibre, except the steel roof and the doors",
+        "img": "https://i.ibb.co/86GKdkR/lamborghini.png"
     },
     {
         "id": 4,
-        "name": "7 days Tour",
-        "supplierName": "Teslaaaaar",
-        "price": "$1150",
-        "quantity": "110",
-        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
-        "img": "https://i.ibb.co/HGPLfn5/3.png"
+        "name": "Mercedes-Benz EQC",
+        "supplierName": "Mercedes",
+        "price": "$54,950 ",
+        "quantity": "25",
+        "description": "The comfort, the premium upholstery, the plush carpeting, polished wood trim, sleek styling, LED mood lighting and even the scent signals that this vehicle is special",
+        "img": "https://i.ibb.co/gSVTh5q/marcedes.png"
     },
     {
         "id": 5,
-        "name": "7 days Tour",
-        "supplierName": "Teslaaaaar",
-        "price": "$1150",
-        "quantity": "10",
-        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
-        "img": "https://i.ibb.co/HGPLfn5/3.png"
+        "name": "GranTurismo",
+        "supplierName": "Maserati ",
+        "price": "$110,240",
+        "quantity": "15",
+        "description": "Maserati is one of the world's most glamorous automotive manufacturers, rich in tradition and sporting successes.  Their logo is shaped like Neptune's trident and elegance and speed",
+        "img": "https://i.ibb.co/58NHn52/maserati.png"
     },
     {
         "id": 6,
-        "name": "7 days Tour",
-        "supplierName": "Teslaaaaar",
-        "price": "$1150",
-        "quantity": "10",
-        "description": "We will ensure that you enjoy your 7-day vacation by providing free food and transporting you to all of the beautiful destinations.",
-        "img": "https://i.ibb.co/HGPLfn5/3.png"
+        "name": "Range Rover Evoque",
+        "supplierName": "Range Rover",
+        "price": "$92,000",
+        "quantity": "35",
+        "description": "The Range Rover is a 4x4 motor car produced by Land Rover. Range Rover achieves a smooth, relaxing drive by adjusting its height through the Electronic Air Suspension",
+        "img": "https://i.ibb.co/MkSnhh3/range-rover.png"
     }
 ]
