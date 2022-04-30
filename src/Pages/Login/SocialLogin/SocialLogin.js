@@ -1,8 +1,22 @@
 import React from 'react';
 import google from '../../../images/google.svg'
 import './SocialLogin.css'
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+    /* Require auth code */
+    const navigate = useNavigate();
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    /* Require auth code ends*/
+
     return (
         <div className='w-50 mx-auto mb-5'>
             <div className='d-flex align-items-center justify-content-center'>
@@ -10,7 +24,7 @@ const SocialLogin = () => {
                 <span className='mx-3'>or</span>
                 <div style={{ height: "1px" }} className='w-25 bg-secondary'></div>
             </div>
-            <button className='continue-with-google mx-auto d-block mt-3 py-3 px-4'>
+            <button onClick={() => signInWithGoogle()} className='continue-with-google mx-auto d-block mt-3 py-3 px-4'>
                 <img src={google} alt="" />
                 <span className='ms-2'>Continue With Google</span>
             </button>

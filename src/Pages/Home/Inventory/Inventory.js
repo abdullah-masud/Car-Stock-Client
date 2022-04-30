@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Inventory = (props) => {
     const { name, price, description, img, quantity, supplierName } = props.inventory;
@@ -14,7 +15,7 @@ const Inventory = (props) => {
                     {description}
                 </Card.Text>
                 <Card.Title className='mt-3'>Quantity: {quantity}</Card.Title>
-                <Button className='my-2' variant="outline-success">Update</Button>
+                <Button as={Link} to='/update' className='my-2' variant="outline-success">Update</Button>
             </Card.Body>
         </Card >
     );
