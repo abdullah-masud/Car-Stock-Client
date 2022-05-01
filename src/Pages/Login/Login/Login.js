@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -11,6 +11,8 @@ import Loading from '../../Shared/Loading/Loading';
 const Login = () => {
     const emailRef = useRef('')
     const passwordRef = useRef('')
+
+
 
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -47,6 +49,9 @@ const Login = () => {
             toast('Please enter email address');
         }
     }
+
+
+
 
     return (
         <Container className='mt-5 login-container'>
