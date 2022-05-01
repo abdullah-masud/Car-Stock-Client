@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { sendPasswordResetEmail } from 'firebase/auth';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
@@ -13,9 +12,8 @@ const Login = () => {
     const emailRef = useRef('')
     const passwordRef = useRef('')
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     const location = useLocation()

@@ -8,7 +8,6 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
     const [passwordError, setPasswordError] = useState('')
-    const navigate = useNavigate();
 
     const nameRef = useRef();
     const emailRef = useRef();
@@ -18,6 +17,7 @@ const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth,
         { sendEmailVerification: true });
 
+    const navigate = useNavigate();
     if (user) {
         navigate('/home')
     }
@@ -46,7 +46,7 @@ const Register = () => {
     }
 
     return (
-        <Container className='mt-5'>
+        <Container className='mt-5 login-container'>
             <h2 className='text-center'>Sign Up</h2>
             <Form onSubmit={handleRegister} className='w-50 mx-auto '>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
