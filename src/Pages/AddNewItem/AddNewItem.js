@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import './AddNewItem.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddNewItem = () => {
     const { register, handleSubmit } = useForm();
@@ -33,6 +35,7 @@ const AddNewItem = () => {
                 <Form.Control type="text" className='mb-2' placeholder='Photo URL' {...register("img")} />
                 <input type="submit" className='add-item-button' value="Add Item" />
             </form>
+            <ToastContainer />
         </Container>
     );
 };

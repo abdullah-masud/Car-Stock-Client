@@ -48,7 +48,7 @@ const Register = () => {
     return (
         <Container className='mt-5 login-container'>
             <h2 className='text-center'>Sign Up</h2>
-            <Form onSubmit={handleRegister} className='w-50 mx-auto '>
+            <Form onSubmit={handleRegister} className='w-50 mx-auto login-form'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" ref={nameRef} placeholder="Enter Name" required />
@@ -70,7 +70,7 @@ const Register = () => {
             </Form>
             <div className='mx-auto w-50'>{errorElement}</div>
             <p className='text-danger w-50 mx-auto mt-3'>{passwordError}</p>
-            <div className=" w-50 mx-auto">
+            <div className=" w-50 mx-auto login-form">
                 <p className='mt-3'>
                     Already have an account? <Link to="/login">Login</Link>
                 </p>

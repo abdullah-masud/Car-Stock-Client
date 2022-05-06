@@ -18,7 +18,7 @@ const SocialLogin = () => {
     /* Require auth code ends*/
 
     return (
-        <div className='w-50 mx-auto mb-5'>
+        <div className='w-50 mx-auto mb-5 social-login-container'>
             <div className='d-flex align-items-center justify-content-center'>
                 <div style={{ height: "1px" }} className='w-25 bg-secondary'></div>
                 <span className='mx-3'>or</span>

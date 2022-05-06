@@ -9,7 +9,7 @@ const useInventories = () => {
             .then(data => setInventories(data));
     }, [])
 
-    return [inventories]
+    return [inventories, setInventories]
 
 }
 

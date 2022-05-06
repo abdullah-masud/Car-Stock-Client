@@ -8,6 +8,8 @@
     background-color: rgb(243, 243, 243);
 }
 
+
+
 /* Responsive styles */
 @media only screen and (max-width: 576px) {
 
@@ -17,8 +19,16 @@
         width: 100%;
     }
 
+    .login-form {
+        width: 75% !important;
+    }
+
     .login-container {
         margin-bottom: 200px;
+    }
+
+    .social-login-container {
+        width: 100% !important;
     }
 
 

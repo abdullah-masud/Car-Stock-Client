@@ -54,9 +54,9 @@ const Login = () => {
 
 
     return (
-        <Container className='mt-5 login-container'>
-            <h2 className='text-center'>login</h2>
-            <Form onSubmit={handleLogin} className='w-50 mx-auto '>
+        <Container className='mt-5 login-container '>
+            <h2 className='text-center'>Login</h2>
+            <Form onSubmit={handleLogin} className='w-50 mx-auto login-form'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" ref={emailRef} placeholder="Enter email" required />
@@ -69,11 +69,11 @@ const Login = () => {
                 <Button className='mx-auto d-block navbar-login-button' type='submit' variant="outline-light">Login</Button>
             </Form>
             <div className='mx-auto w-50'>{errorElement}</div>
-            <div className=" w-50 mx-auto">
+            <div className=" w-50 mx-auto login-form">
                 <p className='mt-3'>
                     New to Car Stock? <Link to="/register">Create an account</Link>
                 </p>
-                <p className='mt-3'>
+                <p className='mt-3 d-block'>
                     Forget Password?<button onClick={resetPassword} className='btn btn-link text-primary text-decoration-none'>Reset Password</button>
                 </p>
             </div>
