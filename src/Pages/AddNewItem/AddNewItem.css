@@ -1,0 +1,28 @@
+.add-item-button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    background-color: #144e5f;
+    color: white;
+}
+
+.add-item-button:hover {
+    background-color: #06566e;
+    color: white;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 576px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .addNewItem-container {
+        width: 100% !important;
+
+    }
+
+}

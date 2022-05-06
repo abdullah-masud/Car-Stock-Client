@@ -4,6 +4,22 @@
     justify-items: center;
 }
 
+.inventories-container {
+    margin-bottom: 100px;
+}
+
+.manage-inventories-button a {
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    background-color: #144e5f;
+}
+
+.manage-inventories-button a:hover {
+    background-color: #06566e;
+    color: white;
+}
+
 /* Responsive styles */
 @media only screen and (max-width: 576px) {
 
@@ -13,6 +29,14 @@
         width: 100%;
     }
 
+    .manage-inventories-button {
+        justify-content: center !important;
+    }
+
+    .manage-inventories-button button {
+        margin-left: 3px;
+
+    }
 
     .inventories-collection {
         grid-template-columns: repeat(1, 1fr);

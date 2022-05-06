@@ -12,7 +12,7 @@ const Inventory = (props) => {
     }
 
     return (
-        <Card className='mx-3 mb-5 text-center shadow-sm p-3 mb-5 bg-body rounded border-0'>
+        <Card className='mx-3  mb-5 text-center shadow-sm p-3 mb-5 bg-body rounded border-0'>
             <Card.Img variant="top" src={img} />
             <Card.Body >
                 <p className='display-6'>{name}</p>
