@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useInventories from '../../../hooks/useInventories';
 import Inventory from '../Inventory/Inventory';
 import './Inventories.css'
 
 const Inventories = () => {
-    const [inventories, setInventories] = useState([]);
+    const [inventories, setInventories] = useInventories();
 
-    useEffect(() => {
-        fetch('http://localhost:5000/inventories')
-            .then(res => res.json())
-            .then(data => setInventories(data));
-    }, [])
+
 
     return (
         <Container className=' inventories-container'>

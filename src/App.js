@@ -25,17 +25,23 @@ function App() {
         <Route path='/update/:inventoryId' element=
           {<RequireAuth>
             <Update />
-          </RequireAuth>} />
+          </RequireAuth>} >
+        </Route>
         <Route path='/manageInventories' element=
           {<RequireAuth>
             <ManageInventories />
-          </RequireAuth>} />
-        <Route path='/addnewitem' element={<RequireAuth><AddNewItem /></RequireAuth>} />
+          </RequireAuth>} >
+        </Route>
+        <Route path='/addnewitem' element=
+          {<RequireAuth>
+            <AddNewItem />
+          </RequireAuth>} >
+        </Route>
       </Routes>
 
       <Footer />
 
-    </div>
+    </div >
   );
 }
 
