@@ -22,7 +22,7 @@ const Inventory = (props) => {
             <Card.Body >
                 <p className='display-6'>{name}</p>
                 <h5>Supplier: <span>{supplierName}</span></h5>
-                <Card.Title className='mt-3'>{price}</Card.Title>
+                <Card.Title className='mt-3'>${price}</Card.Title>
                 <Card.Text className='mt-3'>
                     {description}
                 </Card.Text>

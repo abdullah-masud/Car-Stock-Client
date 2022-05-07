@@ -38,9 +38,10 @@ const ManageInventories = () => {
                 <Table>
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th className='text-center'>Price</th>
-                            <th className='text-end'>Options</th>
+                            <th className='w-25 text-center'>Name</th>
+                            <th className='text-center  w-25'>Price</th>
+                            <th className='w-25  text-center'>Quantity</th>
+                            <th className='text-center w-25 '>Options</th>
                         </tr>
                     </thead>
                 </Table>
@@ -49,9 +50,10 @@ const ManageInventories = () => {
                         <Table key={inventory._id} striped bordered hover>
                             <tbody>
                                 <tr>
-                                    <td className='align-middle w-25'><h6>{inventory.name}</h6></td>
-                                    <td className='align-middle text-center w-50'><h6>{inventory.price}</h6></td>
-                                    <td className='text-end w-25 options-button'>
+                                    <td className='align-middle w-25 text-center'><h6>{inventory.name}</h6></td>
+                                    <td className='align-middle text-center w-25'><h6>${inventory.price}</h6></td>
+                                    <td className='align-middle text-center w-25'><h6>{parseInt(inventory.quantity) === 0 ? <span className='text-danger'>Sold</span> : inventory.quantity}</h6></td>
+                                    <td className='text-center w-25 options-button'>
                                         <Button onClick={() => navigateToInventoryUpdate(inventory._id)} className='my-2 me-3' variant="outline-success">Update</Button>
                                         <Button className='my-2 me-3' onClick={() => handleDelete(inventory._id)} variant="outline-danger">Delete</Button>
                                     </td>
