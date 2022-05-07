@@ -8,8 +8,6 @@ import './Inventories.css'
 const Inventories = () => {
     const [inventories, setInventories] = useInventories();
 
-
-
     return (
         <Container className=' inventories-container'>
             <h2 className='text-center mt-5'>Inventories</h2>

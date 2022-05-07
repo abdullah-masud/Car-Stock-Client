@@ -10,12 +10,14 @@ const Update = () => {
     const [inventory, setInventory] = useState({});
     const { _id, name, description, supplierName, price, quantity, img } = inventory;
 
+
+
     useEffect(() => {
         const url = `http://localhost:5000/inventories/${inventoryId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data));
-    }, [])
+    }, [inventory])
 
     const quantityRef = useRef();
     const [show, setShow] = useState(false);
@@ -26,7 +28,7 @@ const Update = () => {
         const newQuantity = quantityRef.current.value;
         if (newQuantity) {
             const addQuantity = parseInt(quantity) + parseInt(newQuantity);
-            const restockInventory = { quantity: addQuantity };
+            const restockInventory = { quantity: addQuantity.toString() };
             const url = `http://localhost:5000/inventories/${inventoryId}`;
             fetch(url, {
                 method: 'PUT',
@@ -43,21 +45,28 @@ const Update = () => {
         setShow(false)
     };
 
+    let sold;
+    if (parseInt(quantity) === 0) {
+        sold = <span className='text-danger'>Sold</span>
+    }
+
     const handleDelivered = () => {
         const decreaseQuantity = parseInt(quantity) - 1;
-        const delivered = { quantity: decreaseQuantity };
-        const url = `http://localhost:5000/inventories/${inventoryId}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(delivered),
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+        const delivered = { quantity: decreaseQuantity.toString() };
+        if (delivered.quantity >= 0) {
+            const url = `http://localhost:5000/inventories/${inventoryId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(delivered),
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
     }
 
 
@@ -74,7 +83,7 @@ const Update = () => {
                 <Card.Text className='mt-3'>
                     {description}
                 </Card.Text>
-                <Card.Title className='mt-3'>Quantity: {quantity}</Card.Title>
+                <Card.Title className='mt-3'>Quantity:  {parseInt(quantity) === 0 ? sold : quantity}</Card.Title>
                 <div className='mt-3'>
                     <Button className='me-3' variant="outline-success" onClick={handleDelivered}>Delvered</Button>
                     <Button variant="outline-success" onClick={handleShow}>Restock</Button>

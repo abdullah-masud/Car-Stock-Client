@@ -27,7 +27,7 @@ const AddNewItem = () => {
 
     return (
         <Container className='w-50 mx-auto addNewItem-container mt-4'>
-            <h2 className='mb-3 text-center'>Add New Item</h2>
+            <h2 className='my-3 text-center title'>Add New Item</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <Form.Control required type="text" className='mb-2' placeholder='Name' {...register("name")} />
                 <Form.Control required type="text" className='mb-2' placeholder='Supplier Name' {...register("supplierName")} />
