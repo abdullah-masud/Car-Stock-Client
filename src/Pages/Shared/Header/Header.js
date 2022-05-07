@@ -28,6 +28,7 @@ const Header = () => {
                             user && <>
                                 <Nav.Link as={CustomLink} to="/addnewitem" active>Add Item</Nav.Link>
                                 <Nav.Link as={CustomLink} to="/manageInventories" active>Manage Inventories</Nav.Link>
+                                <Nav.Link as={CustomLink} to="/myitems" active>My Items</Nav.Link>
 
                             </>
                         }

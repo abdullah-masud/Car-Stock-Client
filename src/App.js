@@ -13,6 +13,7 @@ import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import AddNewItem from './Pages/AddNewItem/AddNewItem';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import About from './Pages/About/About';
+import MyItems from './Pages/MyItems/MyItems';
 
 function App() {
   return (
@@ -38,6 +39,11 @@ function App() {
         <Route path='/addnewitem' element=
           {<RequireAuth>
             <AddNewItem />
+          </RequireAuth>} >
+        </Route>
+        <Route path='/myitems' element=
+          {<RequireAuth>
+            <MyItems />
           </RequireAuth>} >
         </Route>
         <Route path='*' element={<NotFound />}></Route>

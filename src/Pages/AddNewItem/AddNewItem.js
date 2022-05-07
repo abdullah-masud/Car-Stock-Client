@@ -4,8 +4,12 @@ import { useForm } from "react-hook-form";
 import './AddNewItem.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import axios from 'axios';
 
 const AddNewItem = () => {
+    const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
@@ -21,7 +25,23 @@ const AddNewItem = () => {
             .then(result => {
                 console.log(result)
                 toast('Items Added')
-                data.target.reset();
+            })
+
+        const item = {
+            name: data.name,
+            email: user?.email,
+            supplierName: data.supplierName,
+            description: data.description,
+            price: data.price,
+            quantity: data.quantity,
+            img: data.img
+        }
+        axios.post('http://localhost:5000/myitems', item)
+            .then(response => {
+                const { data } = response;
+                if (data.insertedId) {
+                    console.log('item added')
+                }
             })
     };
 
