@@ -26,7 +26,7 @@ const Update = () => {
 
     const handleRestock = () => {
         const newQuantity = quantityRef.current.value;
-        if (newQuantity) {
+        if (newQuantity > 0) {
             const addQuantity = parseInt(quantity) + parseInt(newQuantity);
             const restockInventory = { quantity: addQuantity.toString() };
             const url = `http://localhost:5000/inventories/${inventoryId}`;
@@ -85,7 +85,7 @@ const Update = () => {
                 </Card.Text>
                 <Card.Title className='mt-3'>Quantity:  {parseInt(quantity) === 0 ? sold : quantity}</Card.Title>
                 <div className='mt-3'>
-                    <Button className='me-3' variant="outline-success" onClick={handleDelivered}>Delvered</Button>
+                    <Button className='me-3' variant="outline-success" onClick={handleDelivered}>Delivered</Button>
                     <Button variant="outline-success" onClick={handleShow}>Restock</Button>
                 </div>
             </div>
@@ -94,7 +94,7 @@ const Update = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>Enter Quantity</Modal.Title>
                 </Modal.Header>
-                <Modal.Body><Form.Control ref={quantityRef} type="email" placeholder="Quantity" /></Modal.Body>
+                <Modal.Body><Form.Control ref={quantityRef} type="number" placeholder="Quantity" /></Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleRestock}>
                         Add

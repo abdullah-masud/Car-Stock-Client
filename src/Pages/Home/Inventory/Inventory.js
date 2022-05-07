@@ -11,6 +11,11 @@ const Inventory = (props) => {
         navigate(`/update/${id}`)
     }
 
+    let sold;
+    if (parseInt(quantity) === 0) {
+        sold = <span className='text-danger'>Sold</span>
+    }
+
     return (
         <Card className='mx-3  mb-5 text-center shadow-sm p-3 mb-5 bg-body rounded border-0'>
             <Card.Img variant="top" src={img} />
@@ -21,7 +26,7 @@ const Inventory = (props) => {
                 <Card.Text className='mt-3'>
                     {description}
                 </Card.Text>
-                <Card.Title className='mt-3'>Quantity: {quantity}</Card.Title>
+                <Card.Title className='mt-3'>Quantity:  {parseInt(quantity) === 0 ? sold : quantity}</Card.Title>
                 <Button onClick={() => navigateToInventoryUpdate(_id)} className='my-2' variant="outline-success">Update</Button>
             </Card.Body>
         </Card >
