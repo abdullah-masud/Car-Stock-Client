@@ -9,22 +9,23 @@ const Blogs = () => {
                 <Accordion.Item eventKey="0">
                     <Accordion.Header><h6>Difference between javascript and nodejs</h6></Accordion.Header>
                     <Accordion.Body className='text-start'>
-                        Authentication is the process of confirming a person's identity, whereas authorization is the process of confirming a user's access to certain apps, files, and data.
+                        JavaScript is a simple programming language that runs in any browser JavaScript Engine. Whereas Node JS is an interpreter or running environment for a JavaScript programming language that holds many excesses, it requires libraries that can easily be accessed from JavaScript programming for better use
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
                     <Accordion.Header><h6>Differences between sql and nosql databases.</h6></Accordion.Header>
                     <Accordion.Body className='text-start'>
-                        Authentication is made easy using Firebase. We can easily authenticate with Google, Facebook, Github, or email passwords. We can also deploy our sites using firebase and many more.
-                        <br /><br />
-                        firebase alternatives: <br />
-                        <code>Auth0</code><br /> <code>Okta</code><br /> <code>Back4App</code><br /><code>Parse</code><br /><code> AWS Amplify</code><br /><code>Kuzzle</code>
+                        SQL is Relational Database Management System (RDBMS). These databases have fixed or static or predefined schema. These databases are best suited for complex queries and also they are Vertically Scalable.
+                        <br />
+                        NoSQL is Non-relational or distributed database system. These databases have dynamic schema. These databases are not so good for complex queries and also they are Horizontally scalable.
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
                     <Accordion.Header><h6>What is the purpose of jwt and how does it work</h6></Accordion.Header>
                     <Accordion.Body className='text-start'>
-                        There are many services which Firebase provides other than authentication.<br /> Some of them are: <br /> <code>Cloud Firestore</code><br /> <code>Cloud Functions</code><br /> <code>Hosting</code><br /> <code> Cloud Storage</code><br /> <code>Google Analytics</code><br /> <code>Predictions</code><br /> <code>Cloud Messaging</code><br /> <code>Dynamic Links</code><br /> <code>Remote Config</code>
+                        JWT (JSON WEB TOKEN) securely transmits information between two parties.
+                        It sends information from client side to server. JWT is mainly used for authorization, not authentication.
+                        When a client logins with username and password, server creates a token for the client. That token comes form server to client. Client stores the token on either local storage or browser cookie. Then, when the client sends any request to backend, a copy of the token is send to the server for authorization using bearer. Then the server verifies the token before giving the authorization. If the token is verified then the server responds to client's request.
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

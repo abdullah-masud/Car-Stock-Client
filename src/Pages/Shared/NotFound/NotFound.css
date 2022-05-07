@@ -7,15 +7,12 @@
         width: 100%;
     }
 
-    .update-container .img {
-        width: 700px;
-        margin-bottom: 20px;
+    .notFound-container img {
+        width: 150%;
     }
 
-
-    .update-container {
-        flex-direction: column;
-        margin-bottom: 150px !important;
+    .notFound-container a {
+        width: 70% !important;
     }
 }
 

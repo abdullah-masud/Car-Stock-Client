@@ -11,6 +11,7 @@ import Update from './Pages/Update/Update';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import AddNewItem from './Pages/AddNewItem/AddNewItem';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <AddNewItem />
           </RequireAuth>} >
         </Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
 
       <Footer />
