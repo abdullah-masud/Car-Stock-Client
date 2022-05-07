@@ -15,6 +15,9 @@
 
     .update-container {
         flex-direction: column;
+    }
+
+    .update {
         margin-bottom: 150px !important;
     }
 }

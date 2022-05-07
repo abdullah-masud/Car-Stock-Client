@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Card, Button, Modal, Form } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './Update.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -71,24 +71,30 @@ const Update = () => {
 
 
     return (
-        <div className='update-container shadow-sm p-3 mb-5 bg-body rounded container mt-5 d-flex justify-content-evenly align-items-center'>
-            <div className='img '>
-                <img className='w-50 rounded-3 mx-auto d-block' src={img} alt="" />
-            </div>
-            <div className=''>
-                <p className='display-6'>{name}</p>
-                <p><small>ID: {_id}</small></p>
-                <h5>Supplier: <span>{supplierName}</span></h5>
-                <Card.Title className='mt-3'>{price}</Card.Title>
-                <Card.Text className='mt-3'>
-                    {description}
-                </Card.Text>
-                <Card.Title className='mt-3'>Quantity:  {parseInt(quantity) === 0 ? sold : quantity}</Card.Title>
-                <div className='mt-3'>
-                    <Button className='me-3' variant="outline-success" onClick={handleDelivered}>Delivered</Button>
-                    <Button variant="outline-success" onClick={handleShow}>Restock</Button>
+        <div className='update'>
+            <div className='update-container shadow-sm p-3 mb-3 bg-body rounded container mt-5 d-flex justify-content-evenly align-items-center'>
+                <div className='img '>
+                    <img className='w-50 rounded-3 mx-auto d-block' src={img} alt="" />
+                </div>
+                <div>
+                    <p className='display-6'>{name}</p>
+                    <p><small>ID: {_id}</small></p>
+                    <h5>Supplier: <span>{supplierName}</span></h5>
+                    <Card.Title className='mt-3'>{price}</Card.Title>
+                    <Card.Text className='mt-3'>
+                        {description}
+                    </Card.Text>
+                    <Card.Title className='mt-3'>Quantity:  {parseInt(quantity) === 0 ? sold : quantity}</Card.Title>
+                    <div className='mt-3'>
+                        <Button className='me-3' variant="outline-success" onClick={handleDelivered}>Delivered</Button>
+                        <Button variant="outline-success" onClick={handleShow}>Restock</Button>
+                    </div>
                 </div>
             </div>
+            <div className=' container d-flex justify-content-end mt-4 manage-inventories-button'>
+                <Button as={Link} to='/manageInventories' className='me-3'>Manage Inventories</Button>
+            </div>
+
 
             <Modal show={show} onHide={handleRestock} animation={false}>
                 <Modal.Header closeButton>
@@ -103,6 +109,7 @@ const Update = () => {
             </Modal>
             <ToastContainer />
         </div>
+
     );
 };
 
