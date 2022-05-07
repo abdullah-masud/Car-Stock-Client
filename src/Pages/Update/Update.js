@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Card, Button, Modal, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import './Update.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Update = () => {
     const { inventoryId } = useParams();
@@ -15,15 +17,48 @@ const Update = () => {
             .then(data => setInventory(data));
     }, [])
 
-
     const quantityRef = useRef();
     const [show, setShow] = useState(false);
-    const handleClose = () => {
-        const quantity = quantityRef.current.value;
-        console.log(quantity)
+
+    const handleShow = () => setShow(true);
+
+    const handleRestock = () => {
+        const newQuantity = quantityRef.current.value;
+        if (newQuantity) {
+            const addQuantity = parseInt(quantity) + parseInt(newQuantity);
+            const restockInventory = { quantity: addQuantity };
+            const url = `http://localhost:5000/inventories/${inventoryId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(restockInventory),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
         setShow(false)
     };
-    const handleShow = () => setShow(true);
+
+    const handleDelivered = () => {
+        const decreaseQuantity = parseInt(quantity) - 1;
+        const delivered = { quantity: decreaseQuantity };
+        const url = `http://localhost:5000/inventories/${inventoryId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(delivered),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
 
 
     return (
@@ -41,22 +76,23 @@ const Update = () => {
                 </Card.Text>
                 <Card.Title className='mt-3'>Quantity: {quantity}</Card.Title>
                 <div className='mt-3'>
-                    <Button className='me-3' variant="outline-success">Delvered</Button>
+                    <Button className='me-3' variant="outline-success" onClick={handleDelivered}>Delvered</Button>
                     <Button variant="outline-success" onClick={handleShow}>Restock</Button>
                 </div>
             </div>
 
-            <Modal show={show} onHide={handleClose} animation={false}>
+            <Modal show={show} onHide={handleRestock} animation={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Enter Quantity</Modal.Title>
                 </Modal.Header>
                 <Modal.Body><Form.Control ref={quantityRef} type="email" placeholder="Quantity" /></Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={handleRestock}>
                         Add
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <ToastContainer />
         </div>
     );
 };

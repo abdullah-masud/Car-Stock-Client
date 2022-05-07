@@ -20,6 +20,8 @@ const AddNewItem = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
+                toast('Items Added')
+                data.target.reset();
             })
     };
 
@@ -27,12 +29,12 @@ const AddNewItem = () => {
         <Container className='w-50 mx-auto addNewItem-container mt-4'>
             <h2 className='mb-3 text-center'>Add New Item</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
-                <Form.Control type="text" className='mb-2' placeholder='Name' {...register("name")} />
-                <Form.Control type="text" className='mb-2' placeholder='Supplier Name' {...register("supplierName")} />
-                <Form.Control type="number" className='mb-2' placeholder='Price' {...register("price")} />
-                <Form.Control type="number" className='mb-2' placeholder='Quantity' {...register("quantity")} />
-                <Form.Control className='mb-2' as="textarea" rows={3} placeholder='Description' {...register("description")} />
-                <Form.Control type="text" className='mb-2' placeholder='Photo URL' {...register("img")} />
+                <Form.Control required type="text" className='mb-2' placeholder='Name' {...register("name")} />
+                <Form.Control required type="text" className='mb-2' placeholder='Supplier Name' {...register("supplierName")} />
+                <Form.Control required type="number" className='mb-2' placeholder='Price' {...register("price")} />
+                <Form.Control required type="number" className='mb-2' placeholder='Quantity' {...register("quantity")} />
+                <Form.Control required className='mb-2' as="textarea" rows={3} placeholder='Description' {...register("description")} />
+                <Form.Control required type="text" className='mb-2' placeholder='Photo URL' {...register("img")} />
                 <input type="submit" className='add-item-button' value="Add Item" />
             </form>
             <ToastContainer />
