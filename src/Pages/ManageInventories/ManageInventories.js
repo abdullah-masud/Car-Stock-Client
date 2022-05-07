@@ -32,18 +32,28 @@ const ManageInventories = () => {
     }
 
     return (
-        <Container className='inventories-container mt-4'>
+        <Container className='inventories-container mt-4 '>
             <h2 className='text-center my-3 title'>Manage Inventories</h2>
             <div className=''>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th className='text-center'>Price</th>
+                            <th className='text-end'>Options</th>
+                        </tr>
+                    </thead>
+                </Table>
                 {
                     inventories.map(inventory =>
-                        <Table key={inventory._id} striped hover>
+                        <Table key={inventory._id} striped bordered hover>
                             <tbody>
-                                <tr className=' '>
-                                    <td className='align-middle'><h6>{inventory.name}</h6></td>
-                                    <td className='text-end'>
+                                <tr>
+                                    <td className='align-middle w-25'><h6>{inventory.name}</h6></td>
+                                    <td className='align-middle text-center w-50'><h6>{inventory.price}</h6></td>
+                                    <td className='text-end w-25 options-button'>
                                         <Button onClick={() => navigateToInventoryUpdate(inventory._id)} className='my-2 me-3' variant="outline-success">Update</Button>
-                                        <Button onClick={() => handleDelete(inventory._id)} className='my-2' variant="outline-danger">Delete</Button>
+                                        <Button className='my-2 me-3' onClick={() => handleDelete(inventory._id)} variant="outline-danger">Delete</Button>
                                     </td>
                                 </tr>
                             </tbody>

@@ -23,6 +23,7 @@ const Header = () => {
                     <Nav className="mx-auto">
                         <Nav.Link as={CustomLink} to="/home" active>Home</Nav.Link>
                         <Nav.Link as={CustomLink} to="/blogs" active>Blogs</Nav.Link>
+                        <Nav.Link as={CustomLink} to="/about" active>About</Nav.Link>
                         {
                             user && <>
                                 <Nav.Link as={CustomLink} to="/addnewitem" active>Add Item</Nav.Link>

@@ -12,6 +12,7 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import AddNewItem from './Pages/AddNewItem/AddNewItem';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import About from './Pages/About/About';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/update/:inventoryId' element=

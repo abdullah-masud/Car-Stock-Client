@@ -1,0 +1,36 @@
+.info h6 {
+    background-color: #e8f8fa;
+    border-radius: 10px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 576px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+        margin-bottom: 100px !important;
+    }
+
+    .info {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+
+
+    .info p {
+        width: 100% !important;
+    }
+
+    .about img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width: 992px) {}
