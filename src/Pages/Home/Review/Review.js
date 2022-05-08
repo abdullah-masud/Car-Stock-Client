@@ -12,7 +12,7 @@ const Review = (props) => {
                 <Card.Text className='mt-3'>
                     {description}
                 </Card.Text>
-                <h5>Rating: {rating}</h5>
+                <h5>Rating: {rating}/5</h5>
             </Card.Body>
         </Card >
     );

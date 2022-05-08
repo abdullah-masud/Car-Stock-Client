@@ -14,6 +14,8 @@ import AddNewItem from './Pages/AddNewItem/AddNewItem';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import About from './Pages/About/About';
 import MyItems from './Pages/MyItems/MyItems';
+import GiveReview from './Pages/GiveReview/GiveReview';
+import AllReviews from './Pages/AllReviews/AllReviews';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/allreviews' element={<AllReviews />} />
         <Route path='/update/:inventoryId' element=
           {<RequireAuth>
             <Update />
@@ -44,6 +47,11 @@ function App() {
         <Route path='/myitems' element=
           {<RequireAuth>
             <MyItems />
+          </RequireAuth>} >
+        </Route>
+        <Route path='/givereview' element=
+          {<RequireAuth>
+            <GiveReview />
           </RequireAuth>} >
         </Route>
         <Route path='*' element={<NotFound />}></Route>
