@@ -38,7 +38,7 @@ const ManageInventories = () => {
                     <thead>
                         <tr>
                             <th className='w-25 text-center'>Name</th>
-                            <th className='text-center  w-25'>Price</th>
+                            <th className='text-center w-25'>Price</th>
                             <th className='w-25  text-center'>Quantity</th>
                             <th className='text-center w-25 '>Options</th>
                         </tr>
@@ -61,7 +61,6 @@ const ManageInventories = () => {
                         </Table>
                     )
                 }
-
             </div>
             <div className='d-flex justify-content-end manage-inventories-button'>
                 <Button as={Link} to='/addnewitem' className='me-3'>Add New Item</Button>

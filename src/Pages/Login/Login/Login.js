@@ -8,6 +8,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import axios from 'axios';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     const emailRef = useRef('')
@@ -16,12 +17,14 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
+    const [token] = useToken(user)
+
     const navigate = useNavigate();
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
-    if (user) {
-        // navigate(from, { replace: true });
+    if (token) {
+        navigate(from, { replace: true });
     }
 
     if (loading) {
@@ -38,9 +41,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email });
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
+
     }
 
     const resetPassword = async () => {

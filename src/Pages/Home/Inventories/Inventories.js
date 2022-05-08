@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useInventories from '../../../hooks/useInventories';
@@ -7,9 +6,9 @@ import './Inventories.css'
 
 const Inventories = () => {
     const [inventories, setInventories] = useInventories();
-
     return (
         <Container className='inventories-container'>
+
             <h2 className='text-center mt-5'>Inventories</h2>
             <div className='inventories-collection'>
                 {

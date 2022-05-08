@@ -4,15 +4,23 @@ import './SocialLogin.css'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../hooks/useToken';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+    if (loading) {
+        <Loading />
+    }
+
+    const [token] = useToken(user)
 
     /* Require auth code */
     const navigate = useNavigate();
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
     /* Require auth code ends*/

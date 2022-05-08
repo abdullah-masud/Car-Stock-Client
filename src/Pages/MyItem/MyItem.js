@@ -11,7 +11,7 @@ const MyItem = (props) => {
             <Card.Img variant="top" src={img} />
             <Card.Body >
                 <p className='display-6'>{name}</p>
-                <p className=''>{email}</p>
+                <p className=''><small>User: {email}</small></p>
                 <h5>Supplier: <span>{supplierName}</span></h5>
                 <Card.Title className='mt-3'>${price}</Card.Title>
                 <Card.Text className='mt-3'>

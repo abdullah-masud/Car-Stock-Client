@@ -12,21 +12,6 @@ const AddNewItem = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        // console.log(data)
-        // const url = `http://localhost:5000/inventories`;
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         console.log(result)
-        //         toast('Items Added')
-        //     })
-
         const item = {
             name: data.name,
             email: user?.email,
