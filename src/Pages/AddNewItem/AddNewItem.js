@@ -12,20 +12,20 @@ const AddNewItem = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data)
-        const url = `http://localhost:5000/inventories`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result)
-                toast('Items Added')
-            })
+        // console.log(data)
+        // const url = `http://localhost:5000/inventories`;
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         console.log(result)
+        //         toast('Items Added')
+        //     })
 
         const item = {
             name: data.name,
@@ -36,11 +36,12 @@ const AddNewItem = () => {
             quantity: data.quantity,
             img: data.img
         }
-        axios.post('http://localhost:5000/myitems', item)
+        axios.post('http://localhost:5000/inventories', item)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
                     console.log('item added')
+                    toast('Items Added')
                 }
             })
     };

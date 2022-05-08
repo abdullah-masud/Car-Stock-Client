@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Container, Button, Table, Modal } from 'react-bootstrap';
+import { Container, Button, Table } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import useInventories from '../../hooks/useInventories';
 import './ManageInventories.css'

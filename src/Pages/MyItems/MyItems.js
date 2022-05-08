@@ -25,7 +25,7 @@ const MyItems = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
-            const url = `http://localhost:5000/myitems/${id}`
+            const url = `http://localhost:5000/inventories/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
