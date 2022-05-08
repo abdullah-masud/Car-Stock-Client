@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "../Pages/Shared/Loading/Loading";
 
 const useInventories = () => {
     const [inventories, setInventories] = useState([]);
