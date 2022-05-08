@@ -1,4 +1,4 @@
-# Warehouse Management System
+# Car Stock
 
 Website Link [Car Stock](https://warehouse-management-7e053.web.app/)
 
