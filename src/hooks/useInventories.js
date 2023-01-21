@@ -5,7 +5,7 @@ const useInventories = () => {
     const [inventories, setInventories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/inventories')
+        fetch('https://car-stock-server-4mqt.onrender.com/inventories')
             .then(res => res.json())
             .then(data => {
                 setInventories(data)

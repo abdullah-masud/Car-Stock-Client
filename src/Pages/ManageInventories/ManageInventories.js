@@ -16,7 +16,7 @@ const ManageInventories = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
-            const url = `http://localhost:5000/inventories/${id}`
+            const url = `https://car-stock-server-4mqt.onrender.com/inventories/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

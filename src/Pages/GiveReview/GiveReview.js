@@ -17,7 +17,7 @@ const GiveReview = () => {
             rating: data.rating,
             img: data.img
         }
-        axios.post('http://localhost:5000/reviews', item)
+        axios.post('https://car-stock-server-4mqt.onrender.com/reviews', item)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

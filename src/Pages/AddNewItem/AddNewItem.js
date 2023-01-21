@@ -21,7 +21,7 @@ const AddNewItem = () => {
             quantity: data.quantity,
             img: data.img
         }
-        axios.post('http://localhost:5000/inventories', item)
+        axios.post('https://car-stock-server-4mqt.onrender.com/inventories', item)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
