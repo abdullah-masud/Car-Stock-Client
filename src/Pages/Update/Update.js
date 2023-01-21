@@ -13,7 +13,7 @@ const Update = () => {
 
 
     useEffect(() => {
-        const url = `https://frozen-springs-65348.herokuapp.com/inventories/${inventoryId}`;
+        const url = `http://localhost:5000/inventories/${inventoryId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data));
@@ -29,7 +29,7 @@ const Update = () => {
         if (newQuantity > 0) {
             const addQuantity = parseInt(quantity) + parseInt(newQuantity);
             const restockInventory = { quantity: addQuantity.toString() };
-            const url = `https://frozen-springs-65348.herokuapp.com/inventories/${inventoryId}`;
+            const url = `http://localhost:5000/inventories/${inventoryId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -54,7 +54,7 @@ const Update = () => {
         const decreaseQuantity = parseInt(quantity) - 1;
         const delivered = { quantity: decreaseQuantity.toString() };
         if (delivered.quantity >= 0) {
-            const url = `https://frozen-springs-65348.herokuapp.com/inventories/${inventoryId}`;
+            const url = `http://localhost:5000/inventories/${inventoryId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
